@@ -11,8 +11,8 @@ class Genre(models.Model):
 class Actor(models.Model):
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
-    birthday_day = models.CharField(max_length=30)
-    country = models.CharField(max_length=30)
+    birthday_date = models.DateField(blank=True, null=True)
+    country = models.CharField(max_length=30, blank=True, null=True)
 
     def __str__(self):
         return f'{self.name} {self.surname}'
