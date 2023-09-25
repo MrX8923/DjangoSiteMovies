@@ -11,8 +11,8 @@ class Genre(models.Model):
 class Actor(models.Model):
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
-    birthday_date = models.DateField(blank=True, null=True)
-    country = models.CharField(max_length=30, blank=True, null=True)
+    birthday = models.DateField(max_length=30)
+    country = models.CharField(max_length=30)
 
     def __str__(self):
         return f'{self.name} {self.surname}'
@@ -20,6 +20,9 @@ class Actor(models.Model):
 
 class Country(models.Model):
     title = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f'{self.title}'
 
 
 class Director(models.Model):
@@ -60,3 +63,10 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.title
+
+    def display_actors(self):
+        return ', '.join([actor.name + ' ' + actor.surname for actor in self.actors.all()])
+    display_actors.short_description = 'Актеры'
+
+
+models_list = [Genre, Country, AgeRating]
