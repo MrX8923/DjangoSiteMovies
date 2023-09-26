@@ -7,6 +7,9 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = 'movies_genre'
+
 
 class Actor(models.Model):
     name = models.CharField(max_length=30)
@@ -17,12 +20,18 @@ class Actor(models.Model):
     def __str__(self):
         return f'{self.name} {self.surname}'
 
+    class Meta:
+        db_table = 'movies_actor'
+
 
 class Country(models.Model):
     title = models.CharField(max_length=30)
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        db_table = 'movies_country'
 
 
 class Director(models.Model):
@@ -32,6 +41,9 @@ class Director(models.Model):
     def __str__(self):
         return f'{self.name} {self.surname}'
 
+    class Meta:
+        db_table = 'movies_director'
+
 
 class AgeRating(models.Model):
     choices = (('G', 'G'), ('PG', 'PG'), ('PG-13', 'PG-13'), ('R', 'R'), ('NC-17', 'NC-17'))
@@ -40,6 +52,9 @@ class AgeRating(models.Model):
     def __str__(self):
         return self.rating
 
+    class Meta:
+        db_table = 'movies_age_rating'
+
 
 class Subscription(models.Model):
     choices = (('бесплатно', 'бесплатно'), ('базовая', 'базовая'), ('СУПЕР', 'СУПЕР'))
@@ -47,6 +62,9 @@ class Subscription(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        db_table = 'movies_subscription'
 
 
 class Movie(models.Model):
@@ -64,9 +82,12 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        db_table = 'movies_table'
+
     def display_actors(self):
         return ', '.join([actor.name + ' ' + actor.surname for actor in self.actors.all()])
     display_actors.short_description = 'Актеры'
 
 
-models_list = [Genre, Country, AgeRating]
+models_tuple = (Genre, Country, AgeRating)
