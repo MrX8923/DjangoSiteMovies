@@ -67,18 +67,18 @@ WSGI_APPLICATION = 'DjangoSite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db_movies.sqlite3'
+        'NAME': BASE_DIR / 'db.sqlite3'
     },
     'movies': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db_movies.sqlite3'
     },
-    'clinic': {
+    'vet_clinic': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db_clinic.sqlite3'
     }
 }
-DATABASES_ROUTERS = ['router.MovieRouter']
+DATABASES_ROUTERS = ['router.MovieRouter', 'router.VetClinicRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

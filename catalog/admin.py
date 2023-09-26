@@ -8,7 +8,7 @@ for mod in models_tuple:
 
 class MultiDBModelAdmin(admin.ModelAdmin):
     # A handy constant for the name of the alternate database.
-    using = "db_movies"
+    using = "movies"
 
     def save_model(self, request, obj, form, change):
         # Tell Django to save objects to the 'other' database.
@@ -38,7 +38,7 @@ class MultiDBModelAdmin(admin.ModelAdmin):
 
 
 class MultiDBTabularInline(admin.TabularInline):
-    using = "db_movies"
+    using = "movies"
 
     def get_queryset(self, request):
         # Tell Django to look for inline objects on the 'other' database.

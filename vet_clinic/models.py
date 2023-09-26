@@ -30,9 +30,13 @@ class VetDoctor(Human):
         blank=True
     )
 
+    class Meta:
+        db_table = 'clinic_doctor'
+
 
 class PetOwner(Human):
-    pass
+    class Meta:
+        db_table = 'clinic_pet_owner'
 
 
 class Pet(models.Model):
@@ -70,3 +74,6 @@ class Pet(models.Model):
     menace = models.BooleanField(
         default=True
     )
+
+    class Meta:
+        db_table = 'clinic_pet'
