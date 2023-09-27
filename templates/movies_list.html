@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+    <h2>Каталог фильмов</h2>
+    <ul>
+        {% for movie in movie_list %}
+            <li>
+                <p>{{ movie.title }}</p>
+                <p>{{ movie.title }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content%}

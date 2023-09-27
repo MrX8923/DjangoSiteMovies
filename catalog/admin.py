@@ -2,10 +2,6 @@ from django.contrib import admin
 from .models import *
 
 
-for mod in models_tuple:
-    admin.site.register(mod)
-
-
 class MultiDBModelAdmin(admin.ModelAdmin):
     # A handy constant for the name of the alternate database.
     using = "movies"
@@ -86,14 +82,15 @@ class MovieTable(MultiDBModelAdmin):
 
 
 admin.site.register(Movie, MovieTable)
+for mod in models_tuple:
+    admin.site.register(mod, MultiDBModelAdmin)
 
+# class SubInLine(MultiDBTabularInline):
+#     model = Subscription
+#
+#
+# class SubscriptionAdmin(MultiDBModelAdmin):
+#     inlines = [SubInLine]
 
-class SubInLine(MultiDBTabularInline):
-    model = Movie
-
-
-class SubscriptionAdmin(MultiDBModelAdmin):
-    inlines = [SubInLine]
-
-
-admin.site.register(Subscription, SubscriptionAdmin)
+#
+# admin.site.register(Subscription, SubscriptionAdmin)

@@ -90,4 +90,4 @@ class Movie(models.Model):
     display_actors.short_description = 'Актеры'
 
 
-models_tuple = (Genre, Country, AgeRating)
+models_tuple = (Genre, Country, AgeRating, Subscription)
