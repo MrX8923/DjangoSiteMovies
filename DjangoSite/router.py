@@ -35,7 +35,7 @@ class VetClinicRouter:
     route_app_labels = {'vet_clinic'}
     clinic_tuple = (
             'clinic_pet', 'clinic_pet_owner',
-            'clinic_doctor'
+            'clinic_doctor', 'clinic_human'
     )
 
     def db_for_read(self, model, **hints):

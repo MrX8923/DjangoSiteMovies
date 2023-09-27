@@ -21,6 +21,9 @@ class Human(models.Model):
     def __str__(self):
         return f'{self.lastname} {self.name} {self.surname}'
 
+    class Meta:
+        db_table = 'clinic_human'
+
 
 class VetDoctor(Human):
 
