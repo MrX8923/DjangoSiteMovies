@@ -15,7 +15,7 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db_clinic.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="db.sqlite3" uuid="8d486af9-933a-4a9c-a64b-49e116de75d5">
+    <data-source source="LOCAL" name="db.sqlite3" uuid="528ab26c-d298-4eb3-b457-5bc2ced3faf2">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
