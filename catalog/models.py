@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Genre(models.Model):
@@ -88,6 +89,9 @@ class Movie(models.Model):
     def display_actors(self):
         return ', '.join([actor.name + ' ' + actor.surname for actor in self.actors.all()])
     display_actors.short_description = 'Актеры'
+
+    def get_absolute_url(self):
+        return reverse('info', args=[self.id])
 
 
 models_tuple = (Genre, Country, AgeRating, Subscription)

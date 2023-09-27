@@ -78,7 +78,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3'
     }
 }
-DATABASES_ROUTERS = ['router.MovieRouter', 'router.VetClinicRouter']
+DATABASES_ROUTERS = [
+    '.router.MovieRouter',
+    '.router.VetClinicRouter'
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
